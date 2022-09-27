@@ -18,16 +18,16 @@
     "keywords": [
         "Mars"
     ],
-    "homepage": "https://github.com/BOTCAHX/RTXZY-MD",
+    "homepage": "https://github.com/BOTCAHX/RT-X-MD",
     "author": {
         "name": "tio"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/RTXZY-MD.git"
+        "url": "git+https://github.com/RT-X-MD.git"
     },
     "bugs": {
-        "url": "https://github.com/BOTCAHX/RTXZY-MD/issues"
+        "url": "https://github.com/BOTCAHX/RT-X-MD/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
