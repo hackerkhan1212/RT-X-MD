@@ -1,5 +1,5 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Bot WhatsApp Multiple Auth 
+# Bot WhatsApp
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RT-X-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
 </p>
@@ -7,21 +7,21 @@
 > **Warning**: 
 > Jika kamu menemukan semacam bug, laporkan kepada creator 
 
-> Telah dilakukan pengoptimalan kinerja bot dengan menghapus button mengganggu berjalan nya bot
-
-> Kalo Erorr apikey nya beli atau ganti sendiri saja
-
-> Masih Pembangunan
-
-> Recode dari base ori bochilgaming 
-
-> Jika kurang faham pemasangan masuk ke gc kita.
+- Telah dilakukan pengoptimalan kinerja bot dengan menghapus button mengganggu berjalan nya bot
+- Kalo Erorr apikey nya beli atau ganti sendiri saja
+- Masih Pembangunan
+- Recode dari base ori bochilgaming 
+- Bingung dalam penggunaan masuk aja ke group Diskusi 
 
 ## Panel Pterodaktyl
-**Register Here** [`Klik Disini`](https://billing.acidicnodes.ml/register?ref=Rtd0mUOK)
-> Cara pemasangan nya masuk Grup aja kalo tidak mengerti.
+**Register Here** 
 
+[`Panel Server 1`](https://bit.ly/3xOyGf2)
 
+[`Panel Server 2`](https://bit.ly/3BO4gvS)
+
+> **Warning**: 
+> Masing masing server mempunyai kecepatan Berbeda!
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
 
@@ -88,15 +88,6 @@ npm start
 # Hargai Kami Dengan Menambahkan Kredit
 
 ---------
-
-
-## Arguments `node . [--options] [<session name>]` 
-
-### `--session <nama file>`
-
-menggunakan session dari nama file yang berbeda, default `session.data.json`
-
-contoh nama file `raxcel.json` maka penggunaannya `node . --session 'raxcel'`
 
 ### `--prefix <prefix>`
 
