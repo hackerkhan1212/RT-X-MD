@@ -1,4 +1,6 @@
 // Ubah Foto ada di url bawah bang
+// suka gasuka itu hak anda saya hanya ingin membantu saja
+
 
 import db from '../lib/database.js'
 import { promises } from 'fs'
@@ -37,25 +39,22 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─「 *BOT INFO* 」
-│𖥂 Hai, %name! 👋
-│𖥂 Hari: *%week*
-│𖥂 Bulan: *%date*
-│𖥂 Waktu: *%time*
-│𖥂 Uptime: *%uptime (%muptime)*
-│𖥂 Database : *%rtotalreg* of *%totalreg* 
-│𖥂 Prefix: *[ %p ]*
-╰────
-╭─「 *USER INFO* 」
-│𖥂 Nama: *%name*
-│𖥂 Limit: *%limit*
-│𖥂 Level: *%level*
-│𖥂 XP: *%exp*
-╰────
+*Hai,* %name! 👋
+*Hari:* %week
+*Bulan:* %date
+*Waktu:* %time
+*Uptime:* %uptime (%muptime)
+*Database:* %rtotalreg of %totalreg 
+*Prefix:* *[ %p ]*
+
+*Nama:* %name
+*Limit:* %limit
+*Level:* %level
+*XP:* %exp
 `.trimStart(),
-  header: '╭─「 *%category* 」',
-  body: '│𖥂 %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '*%category*',
+  body: '•%cmd %islimit %isPremium',
+  footer: '',
   after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -158,7 +157,6 @@ text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length
 		const url = 'https://telegra.ph/file/77191dd98b217d2a08fcd.png'
 		conn.sendButton(m.chat, text.trim(), '©' + author, url, [
 			[`Speed`, `.speed`],
-			[`Script`, `.sc`],
 			[`Donasi`, `.donasi`]
 	], false, {
 			asLocation: true
