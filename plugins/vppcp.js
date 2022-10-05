@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
     try {
-        let res = await fetch(`https://botcahx-rest-api.up.railway.app/api/randomgambar/couplepp`)
+        let res = await fetch(`https://botcahx.ddns.net/api/randomgambar/couplepp`)
         let json = await res.json()
         conn.sendFile(m.chat, json.result.male, 'ppmale.jpg', `male`)
         conn.sendFile(m.chat, json.result.female, 'ppfemale.jpg', `female`)
