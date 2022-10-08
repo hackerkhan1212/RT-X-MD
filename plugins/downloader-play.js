@@ -1,5 +1,13 @@
-//awokawok nyoba dlu downloader vercell ngab
-// https://tioxddl.vercel.app/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg
+// Nyoba downloader hasil recode sendiri ngbab
+// Visit web nya (link): https://botcahx2.ddns.net
+// Penggunaan filter audio dan video
+// Example:
+// filter=videoonly&quality=highestvideo&contenttype=video/mp4
+// filter=audioonly&quality=highestaudio&contenttype=audio/mpeg
+// Akhir hasil :
+// https://botcahx2.ddns.net/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg
+
+
 
 import fetch from 'node-fetch'
 import { youtubeSearch } from '@bochilteam/scraper'
@@ -10,11 +18,11 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   if (!vid) throw 'Video/Audio Tidak Ditemukan'
   let { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
   let url = 'https://www.youtube.com/watch?v=' + videoId
-  let ytLink = `https://tioxddl.vercel.app/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
-  let capt = `*Title:* ${title}\n*Published:* ${publishedTime}\n*Duration:* ${durationH}\n*Views:* ${viewH}\n*Url:* ${url}`
+  let ytLink = `https://botcahx2.ddns.net/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+  let capt = `*Title:* ${title}\n*Published:* ${publishedTime}\n*Duration:* ${durationH}\n*Views:* ${viewH}\n*Description:* ${description}\n*Url:* ${url}`
   let buttons = [{ buttonText: { displayText: 'Video' }, buttonId: `${usedPrefix}ytv ${url}` }]
   let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt, footer: '_Audio on progress..._', buttons }, { quoted: m })
-  if (durationS > 4000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Duration too long..._` }, { quoted: msg })
+  //if (durationS > 4000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Duration too long..._` }, { quoted: msg })
   conn.sendMessage(m.chat, { audio: { url: ytLink }, mimetype: 'audio/mpeg' }, { quoted: msg })
 }
 handler.help = ['play']
