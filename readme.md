@@ -1,9 +1,10 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Bot WhatsApp
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RT-X-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
 </p>
+<p align="center"><img src="https://profile-counter.glitch.me/{BOTCAHX}/count.svg" alt="BOTCAHX :: Visitor's Count" /></p>
 
+## BOT WHATSAPP
 > **Warning**: 
 > Jika kamu menemukan semacam bug, laporkan kepada creator 
 
