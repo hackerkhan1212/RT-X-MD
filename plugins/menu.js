@@ -1,7 +1,6 @@
 // Ubah Foto ada di url bawah bang
 // suka gasuka itu hak anda saya hanya ingin membantu saja
 
-
 import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
@@ -154,7 +153,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-		const url = 'https://telegra.ph/file/77191dd98b217d2a08fcd.png'
+		const url = 'https://telegra.ph/file/929e9ddaa5b7249d7d49a.png'
 		conn.sendButton(m.chat, text.trim(), '©' + author, url, [
 			[`Speed`, `.speed`],
 			[`Donasi`, `.donasi`]
