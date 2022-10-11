@@ -152,7 +152,13 @@ conn.logger.level = 'trace'
 
 ```js
 conn.logger.level = 'debug'
+
+### `--singleauth`
+
+you can convert single file auth to multiple file auth using this argument, it will convert if you have single file auth and folder multi auth is empty (creds.json is not exist)
 ```
+
+
 #### Thanks To 
 **Allah SWT**,
 
