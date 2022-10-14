@@ -9,9 +9,12 @@
 > Jika kamu menemukan semacam bug, laporkan kepada creator 
 
 - Kalo Erorr apikey nya beli atau ganti sendiri saja
-- Masih Pembangunan
 - Recode dari base ori bochilgaming 
 - Kalo bingung dalam penggunaan masuk aja ke group Diskusi 
+
+- Gunakan Pm2 atau Forever.js agar Bot Runtime 24 jam/7
+- [`ForeverJs`](https://www.npmjs.com/package/forever)
+- [`Pm2.io`](http://pm2.io/)
 
 ## Panel Pterodaktyl
 **Register Here** 
