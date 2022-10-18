@@ -19,12 +19,10 @@
 ## Panel Pterodaktyl
 **Register Here** 
 
-[`Panel Server 1`](https://bit.ly/3xOyGf2)
-
-[`Panel Server 2`](https://bit.ly/3BO4gvS)
+[`Panel Server 1`](https://bit.ly/3BO4gvS)
 
 > **Warning**: 
-> Masing masing server mempunyai kecepatan Berbeda!
+> Run bot anti banned dan delay cukup pencet button start dan bot otomatis berjalan.
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
 
