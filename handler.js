@@ -607,32 +607,56 @@ export async function handler(chatUpdate) {
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
  */
 export async function participantsUpdate({ id, participants, action }) {
-    if (opts['self'])
-        return
-    if (this.isInit)
-        return
-    if (db.data == null)
-        await loadDatabase()
-    let chat = db.data.chats[id] || {}
-    let text = ''
-    switch (action) {
-        case 'add':
-        case 'remove':
-            if (chat.welcome) {
-                let groupMetadata = await Connection.store.fetchGroupMetadata(id, this.groupMetadata)
-                for (let user of participants) {
-                    let pp = './src/avatar_contact.png'
-                    try {
-                        pp = await this.profilePictureUrl(user, 'image')
-                    } catch (e) {
-                    } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || Connection.conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || Connection.conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                        this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                    }
-                }
-            }
-            break
+	if (opts['self'])
+		return
+	if (this.isInit)
+		return
+	if (db.data == null)
+		await loadDatabase()
+	let chat = db.data.chats[id] || {}
+	let text = ''
+	switch (action) {
+		case 'add':
+		case 'remove':
+			if (chat.welcome) {
+				let groupMetadata = await Connection.store.fetchGroupMetadata(id, this.groupMetadata)
+				for (let user of participants) {
+					let pp = './src/avatar_contact.png'
+					try {
+						let bufpp, image, lurl, bufppgc, uname, gname
+						try {
+							try {
+								bufpp = await this.profilePictureUrl(user, 'image')
+							} catch {
+								bufpp = 'https://i.ibb.co/m53WF9N/avatar-contact.png'
+							}
+							bufppgc = await this.profilePictureUrl(id, 'image')
+							uname = await this.getName(user)
+							gname = await this.getName(id)
+							try {
+								const can = require('knights-canvas')
+								if (action === 'add') {
+									image = await new can.Welcome().setUsername(uname).setGuildName(gname).setGuildIcon(bufppgc).setMemberCount(groupMetadata.size).setAvatar(bufpp).setBackground('https://i.ibb.co/z2QQnqm/wp.jpg').toAttachment()
+								} else {
+									image = await new can.Goodbye().setUsername(uname).setGuildName(gname).setGuildIcon(bufppgc).setMemberCount(groupMetadata.size).setAvatar(bufpp).setBackground('https://i.ibb.co/z2QQnqm/wp.jpg').toAttachment()
+								}
+								pp = await image.toBuffer()
+							} catch {
+								lurl = await fetch(`https://api.lolhuman.xyz/api/base/${action === 'add' ? 'welcome' : 'leave'}?apikey=3bb99b19ba15e6a65ee4f6dd&img1=${bufpp}&img2=${bufppgc}&background=https://i.ibb.co/z2QQnqm/wp.jpg&username=${uname ? encodeURIComponent(uname) : '-'}&member=${groupMetadata.size}&groupname=${encodeURIComponent(gname)}`)
+								pp = Buffer.from(await lurl.arrayBuffer())
+							}
+						} catch {
+							pp = await this.profilePictureUrl(user, 'image')
+						}
+					} catch (e) {
+					} finally {
+						text = (action === 'add' ? (chat.sWelcome || this.welcome || Connection.conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
+							(chat.sBye || this.bye || Connection.conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+						this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+					}
+				}
+			}
+			        break
         case 'promote':
             text = (chat.sPromote || this.spromote || Connection.conn.spromote || '@user ```is now Admin```')
         case 'demote':
