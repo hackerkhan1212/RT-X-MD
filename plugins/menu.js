@@ -1,7 +1,6 @@
 // Ubah Foto ada di url bawah bang
 // suka gasuka itu hak anda saya hanya ingin membantu saja
 
-
 import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
@@ -153,14 +152,22 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-		const url = 'https://telegra.ph/file/77191dd98b217d2a08fcd.png'
-		conn.sendButton(m.chat, text.trim(), '©' + author, url, [
-			[`Speed`, `.speed`],
-			[`Donasi`, `.donasi`]
-	], false, {
-			asLocation: true
-		})
+	const templateButtons = [
+  {index: 1, urlButton: {displayText: 'Script', url: 'https://github.com/BOTCAHX/RT-X-MD'}},
+  {index: 2, callButton: {displayText: 'Call Me', phoneNumber: '082221792667'}},
+  {index: 3, quickReplyButton: {displayText: 'Ping', id: '.speed'}},
+  {index: 4, quickReplyButton: {displayText: 'Owner', id: '.owner'}},
+  {index: 5, quickReplyButton: {displayText: 'Donasi', id: '.donasi'}},
+]
+
+let tio = {
+caption: text.trim(), image: { 
+url: "https://telegra.ph/file/f4063ab3071f5c4af765a.png"},		
+footer: date,
+templateButtons: templateButtons,
+}
+m.reply('*Please wait...*')
+await conn.sendMessage(m.chat, tio,m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e

@@ -6,9 +6,9 @@ export async function all(m, { conn }) {
     let _uptime = process.uptime() * 1000;
     let uptime = _uptime.toTimeString();
     await this.updateProfileStatus(
-      `Uptime: ${uptime} | Mode: ${
+      `⏱️ Aktif Selama: ${uptime} || Mode: ${
         set.self ? 'Private' : 'Publik'
-      } | Made by ` + global.packname
+      } || Made by ` + global.tio
     ).catch((_) => _);
     set.status = new Date() * 1;
   }
