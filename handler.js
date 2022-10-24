@@ -642,7 +642,7 @@ export async function participantsUpdate({ id, participants, action }) {
 								}
 								pp = await image.toBuffer()
 							} catch {
-								lurl = await fetch(`https://api.lolhuman.xyz/api/base/${action === 'add' ? 'welcome' : 'leave'}?apikey=3bb99b19ba15e6a65ee4f6dd&img1=${bufpp}&img2=${bufppgc}&background=https://i.ibb.co/z2QQnqm/wp.jpg&username=${uname ? encodeURIComponent(uname) : '-'}&member=${groupMetadata.size}&groupname=${encodeURIComponent(gname)}`)
+								lurl = await fetch(`https://api.lolhuman.xyz/api/base/${action === 'add' ? 'welcome' : 'leave'}?apikey=85faf717d0545d14074659ad&img1=${bufpp}&img2=${bufppgc}&background=https://i.ibb.co/z2QQnqm/wp.jpg&username=${uname ? encodeURIComponent(uname) : '-'}&member=${groupMetadata.size}&groupname=${encodeURIComponent(gname)}`)
 								pp = Buffer.from(await lurl.arrayBuffer())
 							}
 						} catch {
