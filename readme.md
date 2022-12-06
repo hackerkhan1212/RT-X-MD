@@ -7,7 +7,7 @@
 ## Panel Pterodaktyl
 **Register Here** 
 
-[`Panel Server 1`](https://bit.ly/3BO4gvS)
+[`Panel Server 1`](https://bit.ly/3DwHn0t)
 
 > **Warning**: 
 > Run bot anti banned dan delay cukup pencet button start dan bot otomatis berjalan.
